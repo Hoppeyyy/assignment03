@@ -13,7 +13,7 @@
 
 html {
   color: #222;
-  font-size: 1em;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
   line-height: 1.4;
 }
 
@@ -83,14 +83,223 @@ textarea {
   resize: vertical;
 }
 
+
+h1{
+  color:#000;
+}
 /* ==========================================================================
-   Author's custom styles
+   LAYOUT
    ========================================================================== */
+  body, main, header, footer{
+    width:100%;
+    height:100%;
+    margin:0 20px 0 20px;
+    padding:0;
+  }
+   h1,h2,h3,h4,h5, p{
+  text-align: center;
+  color:#222;
+}
+
+/*header*/
+.header_box{
+  display:flex;
+}
+
+.logoname{
+  display:flex;
+  flex-direction: row;
+  flex-grow:1;
+}
+.head_nav{
+  flex-grow:3;
+}
+
+ul{
+list-style: none;
+padding:0;
+display:flex;
+}
+li{
+  flex-grow: 1;
+  min-width:100px;
+  max-width:200px;
+  position:relative;
+  left:30px;
+}
+.main_picture{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(234, 234, 234);
+}
+
+.intro_content{
+  max-width:200px ;
+}
+
+/*main content*/
+
+article{
+  display:flex;
+  flex-flow: row wrap;
+  width:100vw;
+  justify-content: center;
+  align-items: center;
+
+}
+section{
+  flex-grow:1;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.mainfig{
+  margin:10px;
+  padding:0;
+  height:30vh;
+  max-width: 200px;
+  
+}
+.mainfig > figcaption{
+  width:80px;
+  position:relative;
+  top:-211px;
+  z-index: 1;
+  background-color:rgb(240, 181, 181);
+}
+.mainfig > img{
+  z-index: 0;
+}
+
+.subfig{
+  margin:10px;
+  padding:0;
+  height:10vh;
+  z-index:2;
+  position: relative;
+  top:-80px;
+  background-color:#fff;
+  max-width: 190px;
+  
+}
+.subfig >figcaption{
+  float:left;
+  height:8vh;
+  display:flex;
+  flex-flow:column;
+}
+figcaption > h5, p{
+  margin:0;
+  padding:0;
+  
+}
+
+.subfig >img{
+  float:right;
+  height:40px;
+}
+
+/*things of above*/
+.empbox{
+  flex-grow: 1;
+}
+
+.tabs{
+  width:70px;
+  height:40px;
+  background-color:rgb(248, 248, 248);
+  border:solid 1px rgb(224, 220, 220);
+  position:relative;
+  left:110px;
+
+}
+.tabs_container{
+  flex-grow: 1;
+  height:40px;
+  display: flex;
+}
+
+.tabs > h4{
+  margin:0;
+}
+.above_container{
+
+display:flex;
+flex-direction: row;
+min-width:400px;
+}
+.accordion_menu{
+  flex-grow: 1;
+  border:solid 1px rgb(224, 220, 220);
+}
+
+.tabs_contents{
+  flex-grow: 3;
+  border:solid 1px rgb(224, 220, 220);
+}
+.tab_img{
+  flex-grow: 1;
+}
+.thingsfig{
+  flex-grow: 4;
+}
+
+.comp_nav > ul{
+  justify-content: center;
+  align-items: center;
+}
+.comp_nav >ul >li{
+  display:flex;
+  display:inline-block;
+}
+/*footer*/
+footer{
+  min-width:400px;
+  background-color: slategrey;
+}
+.profile{
+  display:flex;
+}
+.profile_pic{
+  border-radius: 100px;
+  max-height:200px;
+  max-width:200px;
+  margin-top:20px;
+  flex-grow: 1;
+
+}
+.profile > figcaption{
+  flex-grow: 3;
+}
+
+.foot_container{
+  display:flex;
+}
+.foot_content{
+  flex-grow: 1;
+}
+.flickrs{
+  display:flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+.flickrs > img{
+  height:100px;
+  width:100px;
+  margin:10px;
+}
 
 /* ==========================================================================
-   Helper classes
+   MODULES
    ========================================================================== */
 
+
+
+/* ==========================================================================
+   THEME
+   ========================================================================== */
 /*
  * Hide visually and from screen readers
  */
@@ -175,15 +384,131 @@ textarea {
    Modify as content requires.
    ========================================================================== */
 
-@media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */
-}
+/* Small only */
+@media screen and (max-width: 39.9375em) {
 
-@media print,
-  (-webkit-min-device-pixel-ratio: 1.25),
-  (min-resolution: 1.25dppx),
-  (min-resolution: 120dpi) {
-  /* Style adjustments for high resolution devices */
+  .header_box > h2, .logo{
+    display:flex;
+  }
+
+  .head_nav > ul > li{
+    display:inline-block;
+  }
+
+  .empbox{
+      min-width:90px;
+    }
+  .tabs{
+    width:50px;
+    height:30px;
+    background-color:rgb(248, 248, 248);
+    border:solid 1px rgb(224, 220, 220);
+    position:relative;
+    left:85px;
+    top:10px;
+  
+  }
+
+  .profile{
+    display:flex;
+    flex-direction: column;
+  }
+  .foot_container{
+    display:flex;
+    flex-flow: column wrap;
+}
+/* Medium and up */
+@media screen and (min-width: 40em) {
+  .header_box{
+    display:flex;
+  }
+  .head_nav > ul > li{
+    display:inline-block;
+  }
+
+  .comp_nav >ul >li{
+    display:flex;
+    display:inline-block;
+    
+  }
+
+
+  .tabs{
+    width:70px;
+    height:40px;
+    background-color:rgb(248, 248, 248);
+    border:solid 1px rgb(224, 220, 220);
+    position:relative;
+    left:110px;
+  
+  }
+  .profile{
+    display:flex;
+    flex-direction: column;
+  }
+  .foot_container{
+    display:flex;
+    flex-flow: column wrap;
+}
+}
+/* Medium only */
+@media screen and (min-width: 40em) and
+(max-width: 63.9375em) {
+
+
+}
+/* Large and up */
+@media screen and (min-width: 64em) {
+  .header_box{
+    display:flex;
+  }
+  .head_nav > ul > li{
+    display:inline-block;
+    
+  }
+
+
+  .tabs{
+    width:70px;
+    height:40px;
+    background-color:rgb(248, 248, 248);
+    border:solid 1px rgb(224, 220, 220);
+    position:relative;
+    left:110px;
+  
+  }
+
+  .profile{
+    display:flex;
+    flex-direction: row;
+  }
+  .foot_container{
+    display:flex;
+    flex-flow: row wrap;
+}
+}
+/* Large only */
+@media screen and (min-width: 64em) and
+(max-width: 74.9375em) {
+
+  .tabs{
+    width:70px;
+    height:40px;
+    background-color:rgb(248, 248, 248);
+    border:solid 1px rgb(224, 220, 220);
+    position:relative;
+    left:110px;
+  
+  }
+
+  .profile{
+    display:flex;
+    flex-direction: row;
+  }
+  .foot_container{
+    display:flex;
+    flex-flow: row wrap;
+}
 }
 
 /* ==========================================================================
@@ -260,4 +585,4 @@ textarea {
     page-break-after: avoid;
   }
 }
-
+}
