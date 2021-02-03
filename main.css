@@ -16,7 +16,23 @@ html {
   font-family:Verdana, Geneva, Tahoma, sans-serif;
   line-height: 1.4;
 }
+h1,h2,h3,h4,h5, p{
+  text-align: center;
+  color:#222;
+}
 
+ul{
+  list-style: none;
+  padding:0;
+  display:flex;
+  }
+  li{
+    flex-grow: 1;
+    min-width:100px;
+    max-width:200px;
+    position:relative;
+    left:30px;
+  }
 /*
  * Remove text-shadow in selection highlight:
  * https://twitter.com/miketaylr/status/12228805301
@@ -56,37 +72,9 @@ hr {
  * https://github.com/h5bp/html5-boilerplate/issues/440
  */
 
-audio,
-canvas,
-iframe,
-img,
-svg,
-video {
-  vertical-align: middle;
-}
-
-/*
- * Remove default fieldset styles.
- */
-
-fieldset {
-  border: 0;
-  margin: 0;
-  padding: 0;
-}
-
-/*
- * Allow only vertical resizing of textareas.
- */
-
-textarea {
-  resize: vertical;
-}
 
 
-h1{
-  color:#000;
-}
+
 /* ==========================================================================
    LAYOUT
    ========================================================================== */
@@ -96,10 +84,6 @@ h1{
     margin:0 20px 0 20px;
     padding:0;
   }
-   h1,h2,h3,h4,h5, p{
-  text-align: center;
-  color:#222;
-}
 
 /*header*/
 .header_box{
@@ -113,25 +97,6 @@ h1{
 }
 .head_nav{
   flex-grow:3;
-}
-
-ul{
-list-style: none;
-padding:0;
-display:flex;
-}
-li{
-  flex-grow: 1;
-  min-width:100px;
-  max-width:200px;
-  position:relative;
-  left:30px;
-}
-.main_picture{
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(234, 234, 234);
 }
 
 .intro_content{
@@ -155,53 +120,85 @@ section{
 }
 
 
-.mainfig{
-  margin:10px;
-  padding:0;
-  height:30vh;
-  max-width: 200px;
-  
+/*footer*/
+footer{
+  min-width:400px;
+  background-color: slategrey;
 }
-.mainfig > figcaption{
-  width:80px;
-  position:relative;
-  top:-211px;
-  z-index: 1;
-  background-color:rgb(240, 181, 181);
-}
-.mainfig > img{
-  z-index: 0;
-}
-
-.subfig{
-  margin:10px;
-  padding:0;
-  height:10vh;
-  z-index:2;
-  position: relative;
-  top:-80px;
-  background-color:#fff;
-  max-width: 190px;
-  
-}
-.subfig >figcaption{
-  float:left;
-  height:8vh;
+.profile{
   display:flex;
-  flex-flow:column;
 }
-figcaption > h5, p{
-  margin:0;
-  padding:0;
+
+.foot_container{
+  display:flex;
+}
+.foot_content{
+  flex-grow: 1;
+}
+.flickrs{
+  display:flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+
+/* ==========================================================================
+   MODULES
+   ========================================================================== */
+   .main_picture{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(234, 234, 234);
+  }
+
+  .mainfig{
+    margin:10px;
+    padding:0;
+    height:30vh;
+    max-width: 200px;
+    
+  }
+  .mainfig > figcaption{
+    width:80px;
+    position:relative;
+    top:-211px;
+    z-index: 1;
+    background-color:rgb(240, 181, 181);
+  }
+  .mainfig > img{
+    z-index: 0;
+  }
   
-}
+  .subfig{
+    margin:10px;
+    padding:0;
+    height:10vh;
+    z-index:2;
+    position: relative;
+    top:-80px;
+    background-color:#fff;
+    max-width: 190px;
+    
+  }
+  .subfig >figcaption{
+    float:left;
+    height:8vh;
+    display:flex;
+    flex-flow:column;
+  }
+  figcaption > h5, p{
+    margin:0;
+    padding:0;
+    
+  }
+  
+  .subfig >img{
+    float:right;
+    height:40px;
+  }
 
-.subfig >img{
-  float:right;
-  height:40px;
-}
-
-/*things of above*/
+  /*things of above*/
 .empbox{
   flex-grow: 1;
 }
@@ -246,45 +243,7 @@ min-width:400px;
   flex-grow: 4;
 }
 
-.comp_nav > ul{
-  justify-content: center;
-  align-items: center;
-}
-.comp_nav >ul >li{
-  display:flex;
-  display:inline-block;
-}
 /*footer*/
-footer{
-  min-width:400px;
-  background-color: slategrey;
-}
-.profile{
-  display:flex;
-}
-.profile_pic{
-  border-radius: 100px;
-  max-height:200px;
-  max-width:200px;
-  margin-top:20px;
-  flex-grow: 1;
-
-}
-.profile > figcaption{
-  flex-grow: 3;
-}
-
-.foot_container{
-  display:flex;
-}
-.foot_content{
-  flex-grow: 1;
-}
-.flickrs{
-  display:flex;
-  flex-flow: row wrap;
-  justify-content: center;
-}
 .flickrs > img{
   height:100px;
   width:100px;
@@ -292,14 +251,29 @@ footer{
 }
 
 /* ==========================================================================
-   MODULES
-   ========================================================================== */
-
-
-
-/* ==========================================================================
    THEME
    ========================================================================== */
+
+   .comp_nav > ul{
+    justify-content: center;
+    align-items: center;
+  }
+  .comp_nav >ul >li{
+    display:flex;
+    display:inline-block;
+  }
+
+  .profile_pic{
+    border-radius: 100px;
+    max-height:200px;
+    max-width:200px;
+    margin-top:20px;
+    flex-grow: 1;
+  
+  }
+  .profile > figcaption{
+    flex-grow: 3;
+  }
 /*
  * Hide visually and from screen readers
  */
